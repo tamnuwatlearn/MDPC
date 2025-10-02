@@ -1,0 +1,655 @@
+Timing Report
+
+Slack (MET) :             0.473ns  (required time - arrival time)
+  Source:                 PC_Register/PCF_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by STU1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            IF_Register/instrD_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_1  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             STU1_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_1 rise@0.000ns - STU1 rise@0.000ns)
+  Data Path Delay:        1.798ns  (logic 0.326ns (18.131%)  route 1.472ns (81.869%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        2.246ns (DCD - SCD)
+    Destination Clock Delay (DCD):    3.186ns = ( 13.186 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.940ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1 rise edge)       0.000     0.000 r                       
+    SLICE_X83Y170        LUT4                         0.000     0.000 r  pblock_1             click_PC/fire_INST_0/O
+                         net (fo=34, routed)          0.940     0.940                         PC_Register/clk
+    SLICE_X80Y153        FDCE                                         r  pblock_1             PC_Register/PCF_reg[5]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X80Y153        FDCE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.080     1.020 r  pblock_1             PC_Register/PCF_reg[5]/Q
+                         net (fo=34, routed)          1.369     2.389                         IMEM/A[5]
+    SLICE_X81Y149        LUT6 (Prop_G6LUT_SLICEL_I3_O)
+                                                      0.123     2.512 r  pblock_1             IMEM/RD[4]_INST_0_i_1/O
+                         net (fo=1, routed)           0.053     2.565                         IMEM/RD[4]_INST_0_i_1_n_0
+    SLICE_X81Y149        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.123     2.688 r  pblock_1             IMEM/RD[4]_INST_0/O
+                         net (fo=1, routed)           0.050     2.738                         IF_Register/RD[4]
+    SLICE_X81Y149        FDCE                                         r  pblock_1             IF_Register/instrD_reg[4]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_1 rise edge)     0.000     0.000 r                       
+    SLICE_X83Y170        LUT4                         0.000     0.000 r  pblock_1             click_PC/fire_INST_0/O
+                         net (fo=34, routed)          0.120     0.120                         click_PC/click
+    SLICE_X83Y170        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     0.179 r  pblock_1             click_PC/phase_out_reg/Q
+                         net (fo=3, estimated)        0.449     0.628                         delay_PC/d
+    SLICE_X87Y150        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     0.651 r  pblock_1             delay_PC/delay0/O
+                         net (fo=1, estimated)        0.376     1.027                         delay_PC/w0
+    SLICE_X95Y161        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.049 r  pblock_1             delay_PC/delay1/O
+                         net (fo=1, estimated)        0.342     1.391                         delay_PC/w1
+    SLICE_X87Y150        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     1.413 r  pblock_1             delay_PC/delay2/O
+                         net (fo=1, estimated)        0.314     1.727                         delay_PC/w2
+    SLICE_X95Y161        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     1.750 r  pblock_1             delay_PC/delay3/O
+                         net (fo=1, estimated)        0.316     2.066                         delay_PC/w3
+    SLICE_X87Y150        LUT1 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.022     2.088 r  pblock_1             delay_PC/delay4/O
+                         net (fo=1, estimated)        0.468     2.556                         click_IF/in_req
+    SLICE_X83Y170        LUT4 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.057     2.613 r  pblock_1             click_IF/fire_INST_0/O
+                         net (fo=98, routed)          0.573     3.186                         IF_Register/clk
+    SLICE_X81Y149        FDCE                                         r  pblock_1             IF_Register/instrD_reg[4]/C
+    SLICE_X81Y149        FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     3.211    pblock_1               IF_Register/instrD_reg[4]
+  -------------------------------------------------------------------
+                         required time                          3.211                           
+                         arrival time                          -2.738                           
+  -------------------------------------------------------------------
+                         slack                                  0.473                           
+
+
+
+
+
+Slack (MET) :             0.504ns  (required time - arrival time)
+  Source:                 IF_Register/instrD_reg[17]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_1  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            ID_Register/RD1E_reg[6]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_2  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_2
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_2 rise@0.000ns - STU1_1 rise@0.000ns)
+  Data Path Delay:        3.774ns  (logic 0.241ns (6.386%)  route 3.533ns (93.614%))
+  Logic Levels:           2  (LUT6=1 MUXF7=1)
+  Clock Path Skew:        4.253ns (DCD - SCD)
+    Destination Clock Delay (DCD):    5.122ns = ( 8.122 - 3.000 ) 
+    Source Clock Delay      (SCD):    0.869ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_1 rise edge)     0.000     0.000 r                       
+    SLICE_X83Y170        LUT4                         0.000     0.000 r  pblock_1             click_IF/fire_INST_0/O
+                         net (fo=98, routed)          0.869     0.869                         IF_Register/clk
+    SLICE_X83Y153        FDCE                                         r  pblock_1             IF_Register/instrD_reg[17]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X83Y153        FDCE (Prop_DFF2_SLICEL_C_Q)
+                                                      0.081     0.950 r  pblock_1             IF_Register/instrD_reg[17]/Q
+                         net (fo=134, routed)         3.018     3.968                         Register_File/A1[2]
+    SLICE_X95Y158        MUXF7 (Prop_F7MUX_CD_SLICEL_S_O)
+                                                      0.070     4.038 r  pblock_1             Register_File/RD1[6]_INST_0_i_2/O
+                         net (fo=1, routed)           0.464     4.502                         Register_File/RD1[6]_INST_0_i_2_n_0
+    SLICE_X92Y157        LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.090     4.592 r  pblock_1             Register_File/RD1[6]_INST_0/O
+                         net (fo=1, routed)           0.051     4.643                         ID_Register/RD1[6]
+    SLICE_X92Y157        FDCE                                         r  pblock_1             ID_Register/RD1E_reg[6]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_2 rise edge)     0.000     0.000 r                       
+    SLICE_X83Y170        LUT4                         0.000     0.000 r  pblock_1             click_IF/fire_INST_0/O
+                         net (fo=98, routed)          0.126     0.126                         click_IF/click
+    SLICE_X83Y170        FDCE (Prop_HFF_SLICEL_C_Q)
+                                                      0.058     0.184 r  pblock_1             click_IF/phase_out_reg/Q
+                         net (fo=3, estimated)        0.482     0.666                         delay_IF/d
+    SLICE_X96Y161        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     0.689 r  pblock_1             delay_IF/delay0/O
+                         net (fo=1, estimated)        0.457     1.146                         delay_IF/w0
+    SLICE_X80Y150        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.168 r  pblock_1             delay_IF/delay1/O
+                         net (fo=1, estimated)        0.462     1.630                         delay_IF/w1
+    SLICE_X96Y161        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     1.652 r  pblock_1             delay_IF/delay2/O
+                         net (fo=1, estimated)        0.539     2.191                         delay_IF/w2
+    SLICE_X80Y150        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     2.214 r  pblock_1             delay_IF/delay3/O
+                         net (fo=1, estimated)        0.452     2.666                         delay_IF/w3
+    SLICE_X96Y161        LUT1 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.022     2.688 r  pblock_1             delay_IF/delay4/O
+                         net (fo=1, estimated)        0.339     3.027                         delay_IF/w4
+    SLICE_X86Y148        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     3.049 r  pblock_1             delay_IF/delay5/O
+                         net (fo=1, estimated)        0.354     3.403                         delay_IF/w5
+    SLICE_X95Y177        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     3.425 r  pblock_1             delay_IF/delay6/O
+                         net (fo=1, estimated)        0.251     3.676                         delay_IF/w6
+    SLICE_X86Y180        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     3.698 r  pblock_1             delay_IF/delay7/O
+                         net (fo=1, estimated)        0.422     4.120                         click_ID/in_req
+    SLICE_X82Y170        LUT4 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.037     4.157 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         0.965     5.122                         ID_Register/clk
+    SLICE_X92Y157        FDCE                                         r  pblock_1             ID_Register/RD1E_reg[6]/C
+    SLICE_X92Y157        FDCE (Setup_HFF_SLICEL_C_D)
+                                                      0.025     5.147    pblock_1               ID_Register/RD1E_reg[6]
+  -------------------------------------------------------------------
+                         required time                          5.147                           
+                         arrival time                          -4.643                           
+  -------------------------------------------------------------------
+                         slack                                  0.504  
+
+
+
+
+Slack (MET) :             0.489ns  (required time - arrival time)
+  Source:                 ID_Register/RD2E_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_2  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            EX_Register/ALUResultM_reg[26]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_3  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_3
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_3 rise@0.000ns - STU1_2 rise@0.000ns)
+  Data Path Delay:        4.371ns  (logic 0.889ns (20.336%)  route 3.482ns (79.664%))
+  Logic Levels:           8  (LUT3=2 LUT5=3 LUT6=1 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        4.836ns (DCD - SCD)
+    Destination Clock Delay (DCD):    6.239ns = ( 9.239 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.403ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_2 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         1.403     1.403                         ID_Register/clk
+    SLICE_X91Y153        FDCE                                         r  pblock_1             ID_Register/RD2E_reg[4]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X91Y153        FDCE (Prop_CFF_SLICEM_C_Q)
+                                                      0.078     1.481 r  pblock_1             ID_Register/RD2E_reg[4]/Q
+                         net (fo=1, routed)           0.175     1.656                         Mux3_Forward_2/RD2E[4]
+    SLICE_X89Y153        LUT5 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.149     1.805 r  pblock_1             Mux3_Forward_2/WriteDataE[4]_INST_0/O
+                         net (fo=2, routed)           0.475     2.280                         Mux2_ALU/WriteDataE[4]
+    SLICE_X84Y153        LUT3 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.123     2.403 r  pblock_1             Mux2_ALU/SrcBE[4]_INST_0/O
+                         net (fo=135, routed)         1.593     3.997                         ALU/u_left_shift/SrcBE[4]
+    SLICE_X84Y164        LUT5 (Prop_D5LUT_SLICEL_I3_O)
+                                                      0.066     4.063 r  pblock_1             ALU/u_left_shift/ALUResult[30]_INST_0_i_2/O
+                         net (fo=4, routed)           0.391     4.454                         ALU/u_left_shift/ALUResult[30]_INST_0_i_2_n_0
+    SLICE_X86Y163        LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.149     4.603 r  pblock_1             ALU/u_left_shift/ALUResult[26]_INST_0_i_1/O
+                         net (fo=2, routed)           0.053     4.656                         ALU/u_left_shift/ALUResult[26]_INST_0_i_1_n_0
+    SLICE_X86Y163        LUT3 (Prop_C5LUT_SLICEL_I0_O)
+                                                      0.136     4.792 r  pblock_1             ALU/u_left_shift/ALUResult[26]_INST_0/O
+                         net (fo=1, routed)           0.752     5.544                         ALU/left_shift_result[26]
+    SLICE_X80Y158        LUT5 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.099     5.643 r  pblock_1             ALU/ALUResult[26]_INST_0_i_3/O
+                         net (fo=1, routed)           0.009     5.652                         ALU/ALUResult[26]_INST_0_i_3_n_0
+    SLICE_X80Y158        MUXF7 (Prop_F7MUX_CD_SLICEL_I0_O)
+                                                      0.056     5.708 r  pblock_1             ALU/ALUResult[26]_INST_0_i_1/O
+                         net (fo=1, routed)           0.000     5.708                         ALU/ALUResult[26]_INST_0_i_1_n_0
+    SLICE_X80Y158        MUXF8 (Prop_F8MUX_BOT_SLICEL_I0_O)
+                                                      0.033     5.741 r  pblock_1             ALU/ALUResult[26]_INST_0/O
+                         net (fo=2, routed)           0.034     5.775                         EX_Register/ALUResult[26]
+    SLICE_X80Y158        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[26]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_3 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         0.614     0.614                         click_ID/click
+    SLICE_X83Y169        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     0.673 r  pblock_1             click_ID/phase_out_reg/Q
+                         net (fo=6, estimated)        0.492     1.165                         DSU_ID/delay_element_DSU_ID_0/d
+    SLICE_X96Y176        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.188 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay0/O
+                         net (fo=1, estimated)        0.539     1.727                         DSU_ID/delay_element_DSU_ID_0/w0
+    SLICE_X81Y147        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.749 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay1/O
+                         net (fo=1, estimated)        0.465     2.214                         DSU_ID/delay_element_DSU_ID_0/w1
+    SLICE_X87Y181        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     2.237 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay2/O
+                         net (fo=1, estimated)        0.494     2.731                         DSU_ID/delay_element_DSU_ID_0/w2
+    SLICE_X81Y147        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     2.754 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay3/O
+                         net (fo=1, estimated)        0.434     3.188                         DSU_ID/delay_element_DSU_ID_0/w3
+    SLICE_X96Y176        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     3.210 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay4/O
+                         net (fo=1, estimated)        0.540     3.750                         DSU_ID/delay_element_DSU_ID_0/w4
+    SLICE_X81Y147        LUT1 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.022     3.772 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay5/O
+                         net (fo=1, estimated)        0.534     4.306                         DSU_ID/delay_element_DSU_ID_0/w5
+    SLICE_X95Y162        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     4.328 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay6/O
+                         net (fo=1, estimated)        0.323     4.651                         DSU_ID/delay_element_DSU_ID_0/w6
+    SLICE_X88Y179        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     4.674 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay7/O
+                         net (fo=1, estimated)        0.363     5.037                         DSU_ID/delay_element_DSU_ID_0/w7
+    SLICE_X92Y149        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     5.059 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay8/O
+                         net (fo=1, estimated)        0.245     5.304                         DSU_ID/delay_element_DSU_ID_0/w8
+    SLICE_X95Y162        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     5.327 r  pblock_1             DSU_ID/delay_element_DSU_ID_0/delay9/O
+                         net (fo=1, estimated)        0.377     5.704                         DSU_ID/delay0_z
+    SLICE_X82Y165        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.083     5.787 r  pblock_1             DSU_ID/z_INST_0/O
+                         net (fo=1, routed)           0.032     5.819                         click_EX/in_req
+    SLICE_X82Y165        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.057     5.876 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         0.363     6.239                         EX_Register/clk
+    SLICE_X80Y158        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[26]/C
+    SLICE_X80Y158        FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     6.264    pblock_1               EX_Register/ALUResultM_reg[26]
+  -------------------------------------------------------------------
+                         required time                          6.264                           
+                         arrival time                          -5.775                           
+  -------------------------------------------------------------------
+                         slack                                  0.489                           
+
+
+
+
+
+Slack (MET) :             0.501ns  (required time - arrival time)
+  Source:                 ID_Register/RD2E_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_2  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            EX_Register/ALUResultM_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_3  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_3
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_3 rise@0.000ns - STU1_2 rise@0.000ns)
+  Data Path Delay:        3.162ns  (logic 0.569ns (17.995%)  route 2.593ns (82.005%))
+  Logic Levels:           6  (LUT2=1 LUT3=1 LUT5=2 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        3.638ns (DCD - SCD)
+    Destination Clock Delay (DCD):    4.914ns = ( 7.914 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.277ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_2 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         1.277     1.277                         ID_Register/clk
+    SLICE_X87Y170        FDCE                                         r  pblock_1             ID_Register/RD2E_reg[0]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X87Y170        FDCE (Prop_BFF_SLICEM_C_Q)
+                                                      0.078     1.355 r  pblock_1             ID_Register/RD2E_reg[0]/Q
+                         net (fo=1, routed)           0.155     1.510                         Mux3_Forward_2/RD2E[0]
+    SLICE_X86Y168        LUT5 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.123     1.633 r  pblock_1             Mux3_Forward_2/WriteDataE[0]_INST_0/O
+                         net (fo=2, routed)           1.009     2.641                         Mux2_ALU/WriteDataE[0]
+    SLICE_X84Y155        LUT3 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.146     2.787 r  pblock_1             Mux2_ALU/SrcBE[0]_INST_0/O
+                         net (fo=115, routed)         1.128     3.916                         ALU/u_AND/SrcBE[0]
+    SLICE_X87Y154        LUT2 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.090     4.006 r  pblock_1             ALU/u_AND/ALUResult[0]_INST_0/O
+                         net (fo=1, routed)           0.245     4.251                         ALU/and_result[0]
+    SLICE_X87Y154        LUT5 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.037     4.288 r  pblock_1             ALU/ALUResult[0]_INST_0_i_5/O
+                         net (fo=1, routed)           0.017     4.305                         ALU/ALUResult[0]_INST_0_i_5_n_0
+    SLICE_X87Y154        MUXF7 (Prop_F7MUX_AB_SLICEM_I0_O)
+                                                      0.060     4.365 r  pblock_1             ALU/ALUResult[0]_INST_0_i_2/O
+                         net (fo=1, routed)           0.000     4.365                         ALU/ALUResult[0]_INST_0_i_2_n_0
+    SLICE_X87Y154        MUXF8 (Prop_F8MUX_BOT_SLICEM_I1_O)
+                                                      0.035     4.400 r  pblock_1             ALU/ALUResult[0]_INST_0/O
+                         net (fo=2, routed)           0.039     4.439                         EX_Register/ALUResult[0]
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_3 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         0.614     0.614                         click_ID/click
+    SLICE_X83Y169        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     0.673 r  pblock_1             click_ID/phase_out_reg/Q
+                         net (fo=6, estimated)        0.498     1.171                         DSU_ID/delay_element_DSU_ID_1/d
+    SLICE_X96Y154        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.194 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay0/O
+                         net (fo=1, estimated)        0.428     1.622                         DSU_ID/delay_element_DSU_ID_1/w0
+    SLICE_X80Y146        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.644 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay1/O
+                         net (fo=1, estimated)        0.517     2.161                         DSU_ID/delay_element_DSU_ID_1/w1
+    SLICE_X95Y178        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     2.183 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay2/O
+                         net (fo=1, estimated)        0.565     2.748                         DSU_ID/delay_element_DSU_ID_1/w2
+    SLICE_X80Y146        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     2.771 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay3/O
+                         net (fo=1, estimated)        0.518     3.289                         DSU_ID/delay_element_DSU_ID_1/w3
+    SLICE_X95Y178        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     3.312 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay4/O
+                         net (fo=1, estimated)        0.268     3.580                         DSU_ID/delay_element_DSU_ID_1/w4
+    SLICE_X93Y152        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     3.603 r  pblock_1             DSU_ID/delay_element_DSU_ID_1/delay5/O
+                         net (fo=1, estimated)        0.346     3.949                         DSU_ID/delay1_z
+    SLICE_X82Y165        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.097     4.046 r  pblock_1             DSU_ID/z_INST_0/O
+                         net (fo=1, routed)           0.032     4.078                         click_EX/in_req
+    SLICE_X82Y165        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.057     4.135 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         0.780     4.914                         EX_Register/clk
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/C
+    SLICE_X87Y154        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.025     4.939    pblock_1               EX_Register/ALUResultM_reg[0]
+  -------------------------------------------------------------------
+                         required time                          4.939                           
+                         arrival time                          -4.439                           
+  -------------------------------------------------------------------
+                         slack                                  0.501                    
+	
+
+
+	
+
+
+Slack (MET) :             0.507ns  (required time - arrival time)
+  Source:                 ID_Register/RD2E_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_2  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            EX_Register/ALUResultM_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_3  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_3
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_3 rise@0.000ns - STU1_2 rise@0.000ns)
+  Data Path Delay:        3.270ns  (logic 0.835ns (25.533%)  route 2.435ns (74.467%))
+  Logic Levels:           8  (CARRY8=2 LUT3=1 LUT4=1 LUT5=1 LUT6=1 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        3.752ns (DCD - SCD)
+    Destination Clock Delay (DCD):    5.028ns = ( 8.028 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.277ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_2 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         1.277     1.277                         ID_Register/clk
+    SLICE_X87Y170        FDCE                                         r  pblock_1             ID_Register/RD2E_reg[0]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X87Y170        FDCE (Prop_BFF_SLICEM_C_Q)
+                                                      0.078     1.355 r  pblock_1             ID_Register/RD2E_reg[0]/Q
+                         net (fo=1, routed)           0.155     1.510                         Mux3_Forward_2/RD2E[0]
+    SLICE_X86Y168        LUT5 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.123     1.633 r  pblock_1             Mux3_Forward_2/WriteDataE[0]_INST_0/O
+                         net (fo=2, routed)           1.009     2.641                         Mux2_ALU/WriteDataE[0]
+    SLICE_X84Y155        LUT3 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.146     2.787 r  pblock_1             Mux2_ALU/SrcBE[0]_INST_0/O
+                         net (fo=115, routed)         0.979     3.766                         ALU/u_unsigned_less_than/SrcBE[0]
+    SLICE_X87Y157        LUT4 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.125     3.891 r  pblock_1             ALU/u_unsigned_less_than/ALUResult[0]_INST_0_i_33/O
+                         net (fo=1, routed)           0.013     3.904                         ALU/u_unsigned_less_than/ALUResult[0]_INST_0_i_33_n_0
+    SLICE_X87Y157        CARRY8 (Prop_CARRY8_SLICEM_S[0]_CO[7])
+                                                      0.192     4.096 r  pblock_1             ALU/u_unsigned_less_than/ALUResult[0]_INST_0_i_1/CO[7]
+                         net (fo=1, routed)           0.026     4.122                         ALU/u_unsigned_less_than/ALUResult[0]_INST_0_i_1_n_0
+    SLICE_X87Y158        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.022     4.144 r  pblock_1             ALU/u_unsigned_less_than/ALUResult[0]_INST_0/CO[7]
+                         net (fo=1, routed)           0.194     4.338                         ALU/unsigned_less_than_result[0]
+    SLICE_X87Y154        LUT6 (Prop_C6LUT_SLICEM_I3_O)
+                                                      0.051     4.389 r  pblock_1             ALU/ALUResult[0]_INST_0_i_4/O
+                         net (fo=1, routed)           0.021     4.410                         ALU/ALUResult[0]_INST_0_i_4_n_0
+    SLICE_X87Y154        MUXF7 (Prop_F7MUX_CD_SLICEM_I1_O)
+                                                      0.061     4.471 r  pblock_1             ALU/ALUResult[0]_INST_0_i_1/O
+                         net (fo=1, routed)           0.000     4.471                         ALU/ALUResult[0]_INST_0_i_1_n_0
+    SLICE_X87Y154        MUXF8 (Prop_F8MUX_BOT_SLICEM_I0_O)
+                                                      0.037     4.508 r  pblock_1             ALU/ALUResult[0]_INST_0/O
+                         net (fo=2, routed)           0.039     4.547                         EX_Register/ALUResult[0]
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_3 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y170        LUT4                         0.000     0.000 r  pblock_1             click_ID/fire_INST_0/O
+                         net (fo=265, routed)         0.614     0.614                         click_ID/click
+    SLICE_X83Y169        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     0.673 r  pblock_1             click_ID/phase_out_reg/Q
+                         net (fo=6, estimated)        0.478     1.151                         DSU_ID/delay_element_DSU_ID_3/d
+    SLICE_X96Y162        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.174 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay0/O
+                         net (fo=1, estimated)        0.464     1.638                         DSU_ID/delay_element_DSU_ID_3/w0
+    SLICE_X78Y144        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.660 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay1/O
+                         net (fo=1, estimated)        0.637     2.297                         DSU_ID/delay_element_DSU_ID_3/w1
+    SLICE_X96Y166        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     2.320 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay2/O
+                         net (fo=1, estimated)        0.508     2.828                         DSU_ID/delay_element_DSU_ID_3/w2
+    SLICE_X78Y144        LUT1 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.023     2.851 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay3/O
+                         net (fo=1, estimated)        0.554     3.405                         DSU_ID/delay_element_DSU_ID_3/w3
+    SLICE_X96Y170        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     3.428 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay4/O
+                         net (fo=1, estimated)        0.237     3.665                         DSU_ID/delay_element_DSU_ID_3/w4
+    SLICE_X92Y178        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     3.687 r  pblock_1             DSU_ID/delay_element_DSU_ID_3/delay5/O
+                         net (fo=1, estimated)        0.405     4.092                         DSU_ID/delay3_z
+    SLICE_X82Y165        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.068     4.160 r  pblock_1             DSU_ID/z_INST_0/O
+                         net (fo=1, routed)           0.032     4.192                         click_EX/in_req
+    SLICE_X82Y165        LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.057     4.249 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         0.780     5.028                         EX_Register/clk
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/C
+    SLICE_X87Y154        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.025     5.053    pblock_1               EX_Register/ALUResultM_reg[0]
+  -------------------------------------------------------------------
+                         required time                          5.053                           
+                         arrival time                          -4.547                           
+  -------------------------------------------------------------------
+                         slack                                  0.507         
+
+
+
+
+
+
+Slack (MET) :             0.498ns  (required time - arrival time)
+  Source:                 EX_Register/ALUResultM_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_5  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            DMEM/MEM_reg_1/DINADIN[2]
+                            (rising edge-triggered cell RAMB36E2 clocked by STU1_6  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_6
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1 rise@0.000ns - STU1 rise@0.000ns)
+  Data Path Delay:        2.081ns  (logic 0.316ns (15.188%)  route 1.765ns (84.812%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        2.854ns (DCD - SCD)
+    Destination Clock Delay (DCD):    4.120ns = ( 7.120 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.265ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_5 rise edge)       0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         1.265     1.265                         EX_Register/clk
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X87Y154        FDCE (Prop_CFF_SLICEM_C_Q)
+                                                      0.078     1.343 r  pblock_1             EX_Register/ALUResultM_reg[0]/Q
+                         net (fo=39, routed)          1.116     2.459                         LoadStore_Controller/A[0]
+    SLICE_X84Y169        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.090     2.549 r  pblock_1             LoadStore_Controller/MemWData[15]_INST_0_i_2/O
+                         net (fo=8, routed)           0.349     2.898                         LoadStore_Controller/MemWData[15]_INST_0_i_2_n_0
+    SLICE_X85Y166        LUT4 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.148     3.046 r  pblock_1             LoadStore_Controller/MemWData[10]_INST_0/O
+                         net (fo=2, routed)           0.300     3.346                         DMEM/MemWData[10]
+    RAMB36_X11Y33        RAMB36E2                                     r  pblock_1             DMEM/MEM_reg_1/DINADIN[2]
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_6 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, estimated)      0.483     0.483                         delay_EXtoDMEM/d
+    SLICE_X96Y178        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     0.506 r  pblock_1             delay_EXtoDMEM/delay0/O
+                         net (fo=1, estimated)        0.591     1.097                         delay_EXtoDMEM/w0
+    SLICE_X77Y143        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.120 r  pblock_1             delay_EXtoDMEM/delay1/O
+                         net (fo=1, estimated)        0.647     1.767                         delay_EXtoDMEM/w1
+    SLICE_X96Y178        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     1.789 r  pblock_1             delay_EXtoDMEM/delay2/O
+                         net (fo=1, estimated)        0.569     2.358                         delay_EXtoDMEM/w2
+    SLICE_X77Y143        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     2.380 r  pblock_1             delay_EXtoDMEM/delay3/O
+                         net (fo=1, estimated)        0.646     3.026                         delay_EXtoDMEM/w3
+    SLICE_X96Y178        LUT1 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.022     3.048 r  pblock_1             delay_EXtoDMEM/delay4/O
+                         net (fo=1, estimated)        0.535     3.583                         delay_EXtoDMEM/w4
+    SLICE_X82Y147        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     3.606 r  pblock_1             delay_EXtoDMEM/delay5/O
+                         net (fo=1, estimated)        0.267     3.873                         delay_z_EXtoDMEM
+    SLICE_X85Y168        LUT2 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.035     3.908 r  pblock_1             memory_WE_strb_OBUF_inst_i_1/O
+                         net (fo=5, routed)           0.212     4.120                         DMEM/clk
+    RAMB36_X11Y33        RAMB36E2                                     r  pblock_1             DMEM/MEM_reg_1/CLKARDCLK
+    RAMB36_X11Y33        RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[2])
+                                                     -0.276     3.844    pblock_1               DMEM/MEM_reg_1
+  -------------------------------------------------------------------
+                         required time                          3.844                           
+                         arrival time                          -3.346                           
+  -------------------------------------------------------------------
+                         slack                                  0.498    
+
+
+
+
+
+
+Slack (MET) :             0.511ns  (required time - arrival time)
+  Source:                 EX_Register/ALUResultM_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_3  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            MEM_Register/ALUResultW_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_4  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_4
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_4 rise@0.000ns - STU1_3 rise@0.000ns)
+  Data Path Delay:        1.510ns  (logic 0.078ns (5.167%)  route 1.432ns (94.833%))
+  Logic Levels:           0  
+  Clock Path Skew:        1.996ns (DCD - SCD)
+    Destination Clock Delay (DCD):    3.566ns = ( 6.566 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.571ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_3 rise edge)       0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         1.571     1.571                         EX_Register/clk
+    SLICE_X85Y156        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[8]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X85Y156        FDCE (Prop_CFF_SLICEM_C_Q)
+                                                      0.078     1.649 r  pblock_1             EX_Register/ALUResultM_reg[8]/Q
+                         net (fo=11, routed)          1.432     3.080                         MEM_Register/ALUResultM[8]
+    SLICE_X81Y159        FDCE                                         r  pblock_1             MEM_Register/ALUResultW_reg[8]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_4 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         0.619     0.619                         click_EX/click
+    SLICE_X82Y165        FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     0.677 r  pblock_1             click_EX/phase_out_reg/Q
+                         net (fo=5, estimated)        0.427     1.104                         DSU_EX/delay_element_DSU_EX_0/d
+    SLICE_X86Y147        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.126 r  pblock_1             DSU_EX/delay_element_DSU_EX_0/delay0/O
+                         net (fo=1, estimated)        0.393     1.519                         DSU_EX/delay_element_DSU_EX_0/w0
+    SLICE_X93Y179        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.542 r  pblock_1             DSU_EX/delay_element_DSU_EX_0/delay1/O
+                         net (fo=1, estimated)        0.604     2.146                         DSU_EX/delay_element_DSU_EX_0/w1
+    SLICE_X76Y142        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     2.169 r  pblock_1             DSU_EX/delay_element_DSU_EX_0/delay2/O
+                         net (fo=1, estimated)        0.356     2.525                         DSU_EX/delay_element_DSU_EX_0/w2
+    SLICE_X81Y172        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     2.547 r  pblock_1             DSU_EX/delay_element_DSU_EX_0/delay3/O
+                         net (fo=1, estimated)        0.181     2.728                         DSU_EX/delay0_z
+    SLICE_X82Y165        LUT5 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.066     2.794 r  pblock_1             DSU_EX/z_INST_0/O
+                         net (fo=1, routed)           0.285     3.079                         click_MEM/in_req
+    SLICE_X84Y173        LUT4 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.036     3.115 r  pblock_1             click_MEM/fire_INST_0/O
+                         net (fo=141, routed)         0.451     3.566                         MEM_Register/clk
+    SLICE_X81Y159        FDCE                                         r  pblock_1             MEM_Register/ALUResultW_reg[8]/C
+    SLICE_X81Y159        FDCE (Setup_AFF_SLICEL_C_D)
+                                                      0.025     3.591    pblock_1               MEM_Register/ALUResultW_reg[8]
+  -------------------------------------------------------------------
+                         required time                          3.591                           
+                         arrival time                          -3.080                           
+  -------------------------------------------------------------------
+                         slack                                  0.511   
+
+
+
+
+
+Slack (MET) :             0.500ns  (required time - arrival time)
+  Source:                 EX_Register/ALUResultM_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by STU1_3  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            MEM_Register/ReadDataW_reg[14]/D
+                            (rising edge-triggered cell FDCE clocked by STU1_4  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             STU1_4
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.000ns  (STU1_4 rise@0.000ns - STU1_3 rise@0.000ns)
+  Data Path Delay:        2.948ns  (logic 0.181ns (6.140%)  route 2.767ns (93.860%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        3.422ns (DCD - SCD)
+    Destination Clock Delay (DCD):    4.687ns = ( 7.687 - 3.000 ) 
+    Source Clock Delay      (SCD):    1.265ns
+  Timing Exception:       MultiCycle Path   Setup -end   0
+
+    Location             Delay type                Incr(ns)  Path(ns)    PBlock               Netlist Resource(s)
+  -------------------------------------------------------------------    ----------------------------------------
+                         (clock STU1_3 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         1.265     1.265                         EX_Register/clk
+    SLICE_X87Y154        FDCE                                         r  pblock_1             EX_Register/ALUResultM_reg[0]/C
+  -------------------------------------------------------------------    ----------------------------------------
+    SLICE_X87Y154        FDCE (Prop_CFF_SLICEM_C_Q)
+                                                      0.078     1.343 f  pblock_1             EX_Register/ALUResultM_reg[0]/Q
+                         net (fo=39, routed)          1.088     2.431                         LoadStore_Controller/A[0]
+    SLICE_X81Y159        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.066     2.497 r  pblock_1             LoadStore_Controller/RD[14]_INST_0_i_3/O
+                         net (fo=14, routed)          0.648     3.145                         LoadStore_Controller/RD[14]_INST_0_i_3_n_0
+    SLICE_X82Y165        LUT5 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.037     3.182 r  pblock_1             LoadStore_Controller/RD[14]_INST_0/O
+                         net (fo=2, routed)           1.031     4.213                         MEM_Register/RD[14]
+    SLICE_X82Y161        FDCE                                         r  pblock_1             MEM_Register/ReadDataW_reg[14]/D
+  -------------------------------------------------------------------    ----------------------------------------
+
+                         (clock STU1_4 rise edge)     0.000     0.000 r                       
+    SLICE_X82Y165        LUT4                         0.000     0.000 r  pblock_1             click_EX/fire_INST_0/O
+                         net (fo=147, routed)         0.619     0.619                         click_EX/click
+    SLICE_X82Y165        FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     0.677 r  pblock_1             click_EX/phase_out_reg/Q
+                         net (fo=5, estimated)        0.448     1.125                         DSU_EX/delay_element_DSU_EX_1/d
+    SLICE_X86Y146        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     1.147 r  pblock_1             DSU_EX/delay_element_DSU_EX_1/delay0/O
+                         net (fo=1, estimated)        0.401     1.548                         DSU_EX/delay_element_DSU_EX_1/w0
+    SLICE_X96Y179        LUT1 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.023     1.571 r  pblock_1             DSU_EX/delay_element_DSU_EX_1/delay1/O
+                         net (fo=1, estimated)        0.609     2.180                         DSU_EX/delay_element_DSU_EX_1/w1
+    SLICE_X75Y141        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     2.202 r  pblock_1             DSU_EX/delay_element_DSU_EX_1/delay2/O
+                         net (fo=1, estimated)        0.682     2.884                         DSU_EX/delay_element_DSU_EX_1/w2
+    SLICE_X96Y179        LUT1 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     2.906 r  pblock_1             DSU_EX/delay_element_DSU_EX_1/delay3/O
+                         net (fo=1, estimated)        0.604     3.510                         DSU_EX/delay_element_DSU_EX_1/w3
+    SLICE_X78Y143        LUT1 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     3.532 r  pblock_1             DSU_EX/delay_element_DSU_EX_1/delay4/O
+                         net (fo=1, estimated)        0.331     3.863                         DSU_EX/delay1_z
+    SLICE_X82Y165        LUT5 (Prop_G6LUT_SLICEM_I2_O)
+                                                      0.057     3.920 r  pblock_1             DSU_EX/z_INST_0/O
+                         net (fo=1, routed)           0.285     4.205                         click_MEM/in_req
+    SLICE_X84Y173        LUT4 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.036     4.241 r  pblock_1             click_MEM/fire_INST_0/O
+                         net (fo=141, routed)         0.446     4.687                         MEM_Register/clk
+    SLICE_X82Y161        FDCE                                         r  pblock_1             MEM_Register/ReadDataW_reg[14]/C
+    SLICE_X82Y161        FDCE (Setup_CFF2_SLICEM_C_D)
+                                                      0.025     4.712    pblock_1               MEM_Register/ReadDataW_reg[14]
+  -------------------------------------------------------------------
+                         required time                          4.712                           
+                         arrival time                          -4.213                           
+  -------------------------------------------------------------------
+                         slack                                  0.500                           
+
+
+
+
