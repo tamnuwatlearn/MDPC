@@ -1,0 +1,13 @@
+00000000 T _start
+00000020 t _init_bss
+00000030 t _init_reg
+000000a8 t _call_main
+000000b8 T puti
+000000c4 T memcpy
+000000e4 T memset
+000001c4 T mod
+00000204 T gcd
+000002b0 T main
+80000000 T _ebss
+80000000 T _sbss
+80002000 T _stack_top

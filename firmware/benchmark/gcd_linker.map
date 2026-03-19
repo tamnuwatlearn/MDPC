@@ -1,0 +1,120 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+IRAM             0x00000000         0x00008000         xr
+DRAM             0x80000000         0x00002000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a
+LOAD startup.o
+LOAD firmware.o
+LOAD /opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a
+START GROUP
+LOAD /opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0/../../../../riscv32-unknown-elf/lib/libgloss.a
+END GROUP
+LOAD /opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a
+                0x00000000                        . = ORIGIN (IRAM)
+
+.text           0x00000000      0x2f0
+ *startup.o(.text)
+ .text          0x00000000       0xb8 startup.o
+                0x00000000                _start
+ *(.text)
+ .text          0x000000b8      0x1f8 firmware.o
+                0x000000b8                puti
+                0x000000c4                memcpy
+                0x000000e4                memset
+                0x000001c4                mod
+                0x00000204                gcd
+ *(.text.*)
+ .text.startup  0x000002b0       0x40 firmware.o
+                0x000002b0                main
+
+.rela.dyn       0x000002f0        0x0
+ .rela.text     0x000002f0        0x0 startup.o
+                0x80000000                        . = ORIGIN (DRAM)
+
+.rodata
+ *(.rodata)
+ *(.rodata.*)
+ *(.srodata)
+ *(.srodata.*)
+
+.data           0x80000000        0x0
+ *(.data)
+ .data          0x80000000        0x0 startup.o
+ .data          0x80000000        0x0 firmware.o
+ *(.data.*)
+ *(.sdata)
+ *(.sdata.*)
+
+.bss            0x80000000        0x0
+                0x80000000                        _sbss = .
+ *(.bss)
+ .bss           0x80000000        0x0 startup.o
+ .bss           0x80000000        0x0 firmware.o
+ *(.bss.*)
+ *(.sbss)
+ *(.sbss.*)
+ *(COMMON)
+                0x80000000                        _ebss = .
+                0x80002000                        _stack_top = ((ORIGIN (DRAM) + LENGTH (DRAM)) & 0xfffffffffffffff0)
+OUTPUT(gcd.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x1c
+ .riscv.attributes
+                0x00000000       0x1a startup.o
+ .riscv.attributes
+                0x0000001a       0x1c firmware.o
+
+.comment        0x00000000       0x1b
+ .comment       0x00000000       0x1b firmware.o
+                                 0x1c (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 firmware.o
+
+.debug_info     0x00000000      0x311
+ .debug_info    0x00000000      0x311 firmware.o
+
+.debug_abbrev   0x00000000      0x1c7
+ .debug_abbrev  0x00000000      0x1c7 firmware.o
+
+.debug_loclists
+                0x00000000      0x429
+ .debug_loclists
+                0x00000000      0x429 firmware.o
+
+.debug_aranges  0x00000000       0x28
+ .debug_aranges
+                0x00000000       0x28 firmware.o
+
+.debug_rnglists
+                0x00000000       0x59
+ .debug_rnglists
+                0x00000000       0x59 firmware.o
+
+.debug_line     0x00000000      0x5c0
+ .debug_line    0x00000000      0x5c0 firmware.o
+
+.debug_str      0x00000000      0x10a
+ .debug_str     0x00000000      0x10a firmware.o
+                                0x117 (size before relaxing)
+
+.debug_line_str
+                0x00000000       0x58
+ .debug_line_str
+                0x00000000       0x58 firmware.o
+                                 0xbb (size before relaxing)
+
+.debug_frame    0x00000000       0x70
+ .debug_frame   0x00000000       0x70 firmware.o
